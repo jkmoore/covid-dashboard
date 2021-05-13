@@ -2,6 +2,9 @@ import React from "react";
 
 export const CovidMap = () => {
     return(
-        <main><h2>Covid Map</h2></main>
+        <main className="mapBody">
+            <h2>Map: US map. Should be able to display data when hovering over the state.</h2>
+            <p>Can also click on a state and view data per county within the state</p>
+        </main>
     );
 }
