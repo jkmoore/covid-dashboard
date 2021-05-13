@@ -1,28 +1,29 @@
-import "./Navbar.css";
 import React from "react";
+import "./nav.css";
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import { Home } from "./components/HomePage/Home";
 import { CovidMap } from "./components/MapPage/Map";
 import { Graph } from "./components/GraphPage/Graph";
 import { About } from "./components/AboutPage/About";
 
-export default function NavBar() {
+export const NavBar = () => {
     return (
         <Router>
             <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
+                <nav className="sidenav">
+                    <h1 class="nav-title" href="#top">COVID-19 Dashboard</h1>
+                    <ul className="nav-list">
+                        <li className="list-item">
+                            <Link className="nav-link" to="/">Home</Link>
                         </li>
-                        <li>
-                            <Link to="/map">Map</Link>
+                        <li className="list-item">
+                            <Link className="nav-link" to="/map">Map</Link>
                         </li>
-                        <li>
-                            <Link to="/graph">Graph</Link>
+                        <li className="list-item">
+                            <Link className="nav-link" to="/graph">Graph</Link>
                         </li>
-                        <li>
-                            <Link to="/about">About</Link>
+                        <li className="list-item">
+                            <Link className="nav-link" to="/about">About</Link>
                         </li>
                     </ul>
                 </nav>
