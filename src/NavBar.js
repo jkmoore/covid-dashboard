@@ -44,15 +44,5 @@ export const NavBar = () => {
           </Route>
         </Switch>
     </Router>
-        /*
-        <Router>
-            <Switch>
-                <Route exact path="/" component={Home}></Route>
-                <Route exact path="/map" component={CovidMap}></Route>
-                <Route exact path="/graph" component={Graph}></Route>
-                <Route exact path="/about" component={About}></Route>
-
-            </Switch>
-        </Router>*/
     );
 }
