@@ -17,6 +17,7 @@
     align-items: left;
     list-style-type: none;
     padding-left: 0px;
+    margin-top: 0px;
 }
 
 .nav-link {
@@ -40,4 +41,5 @@
     font-size: 26px;
     color: #4f4c87;
     text-decoration: none;
+    margin-top: 10px;
 }
