@@ -11,40 +11,17 @@ main {
     padding: 0px 10px;
 }
 
-.sidenav {
-    --offset: var(--space);
-    position: sticky;
-    top: var(--offset);
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    left: 0px;
-    top: 0px;
+div {
+    width: 96%;
     background-color: #f0f0f0;
-    box-shadow: -3px 0 5px 0 #555;
-}
-
-a {
-    padding: 10px 20px;
-    display: block;
-    font-weight: bold;
-    font-size: 20px;
-    color: #595959;
-    text-decoration: none;
-}
-
-a:hover {
-    background-color: #4f4c87;
-    color: #f0f0f0;
-}
-
-.nav-title {
-    margin-top: 10px;
-    font-size: 26px;
-    color: #4f4c87;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px 1px rgba(85,85,85,.24);
 }
 
 h1 {
+    margin-top: 5px;
     font-weight: bold;
-    color: #595959;
+    color: #4f4c87;
 }
