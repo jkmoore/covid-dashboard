@@ -1,5 +1,5 @@
 import React from "react";
-import "./nav.css";
+import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import { Home } from "./components/HomePage/Home";
 import { CovidMap } from "./components/MapPage/Map";
