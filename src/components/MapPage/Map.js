@@ -1,82 +1,40 @@
 import "../../App.css";
-import React from "react";
-import { geoCentroid } from "d3-geo";
-import { ComposableMap, Geographies,  Geography,  Marker,  Annotation } from "react-simple-maps";
+import React/*, { useState }, { useEffect, useState }*/ from "react";
+//import axios from "axios";
+import { JSCharting } from 'jscharting-react';
 
-import allStates from "./allstates.json";
+//const covidUrl = 'https://api.caw.sh/v3/covid-19/states';
+/*const states = 'AL,AK,AZ,AR,CA,CO,CT,DE,FL,GA,HI,ID,IL,IN,IA,KS,KY,LA,ME,MD,MA,MI,MN,MS,MO,MT,NE,NV,NH,NJ,NM,NY,NC,ND,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VT,VA,WA,WV,WI,WY'.split(
+    ','
+);*/
 
-const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
-
-const offsets = {
-  VT: [50, -8],
-  NH: [34, 2],
-  MA: [30, -1],
-  RI: [28, 2],
-  CT: [35, 10],
-  NJ: [34, 1],
-  DE: [33, 0],
-  MD: [47, 10],
-  DC: [49, 21]
+let config = {
+    debug: false,
+    type: 'map',
+    series: [{ id: 'usMap', map: 'us' }],
+    defaultPoint: {
+        label_text: '%stateCode'
+    }
 };
 
 export const CovidMap = () => {
-    //var myApiKey = 'AIzaSyDd893v03RtN8d-grfdUq3Y6w6Ll-vDkNE'
+    // const [data, setData] = useState([]);
+
+    // useEffect(() => {
+    //     axios.get(covidUrl).then((data) => {
+    //         console.log(data);
+    //         setData(data);
+    //     });
+    // }, []);
+
     return(
         <main className="container">
             <h2 className="header">Map: US map. Should be able to display data when hovering over the state.</h2>
             <p className="text">Can also click on a state and view data per county within the state</p>
-            <ComposableMap projection="geoAlbersUsa">
-                <Geographies geography={geoUrl}>
-                    {({ geographies }) => (
-                    <>
-                        {geographies.map(geo => (
-                        <Geography
-                            key={geo.rsmKey}
-                            stroke="#FFF"
-                            geography={geo}
-                            fill="#DDD"
-                        />
-                        ))}
-                        {geographies.map(geo => {
-                        const centroid = geoCentroid(geo);
-                        const cur = allStates.find(s => s.val === geo.id);
-                        return (
-                            <g key={geo.rsmKey + "-name"}>
-                            {cur &&
-                                centroid[0] > -160 &&
-                                centroid[0] < -67 &&
-                                (Object.keys(offsets).indexOf(cur.id) === -1 ? (
-                                <Marker coordinates={centroid}>
-                                    <text y="2" fontSize={14} textAnchor="middle">
-                                    {cur.id}
-                                    </text>
-                                </Marker>
-                                ) : (
-                                <Annotation
-                                    subject={centroid}
-                                    dx={offsets[cur.id][0]}
-                                    dy={offsets[cur.id][1]}
-                                >
-                                    <text x={4} fontSize={14} alignmentBaseline="middle">
-                                    {cur.id}
-                                    </text>
-                                </Annotation>
-                                ))}
-                            </g>
-                        );
-                        })}
-                    </>
-                    )}
-                </Geographies>
-            </ComposableMap>
-        </main>
-        /*
-        <main className="mapBody">
-            <h2 className="header">Map: US map. Should be able to display data when hovering over the state.</h2>
-            <p className="text">Can also click on a state and view data per county within the state</p>
-            <div className="chartContainer">
-            
+            <div className='chart'>
+                <JSCharting options={config}/>
             </div>
-        </main>*/
+            
+        </main>
     );
 }
