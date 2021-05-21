@@ -25,3 +25,7 @@ h1 {
     font-weight: bold;
     color: #4f4c87;
 }
+
+td {
+    padding: 10px;
+}

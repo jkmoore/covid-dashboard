@@ -8,13 +8,46 @@ fetch(url)
         return response.json();
     })
     .then(data => {
+        let heading = document.createElement('tr');
+        section.append(heading);
+        let stateHeading = document.createElement('td');
+        stateHeading.innerHTML = 'State';
+        heading.append(stateHeading);
+        let populationHeading = document.createElement('td');
+        populationHeading.innerHTML = 'Population';
+        heading.append(populationHeading);
+        let caseHeading = document.createElement('td');
+        caseHeading.innerHTML = 'Cases';
+        heading.append(caseHeading);
+        let deathHeading = document.createElement('td');
+        deathHeading.innerHTML = 'Deaths';
+        heading.append(deathHeading);
+        let recoveredHeading = document.createElement('td');
+        recoveredHeading.innerHTML = 'Recovered';
+        heading.append(recoveredHeading);
         data.forEach(state => {
-            let gridElement = document.createElement('div');
-            gridElement.className = "grid-element";
-            section.append(gridElement);
-            let name = document.createElement('p');
-            name.innerHTML = `${state.state}: ${state.cases}`;
-            gridElement.append(name);
+            if (state.state !== 'Wuhan Repatriated' && state.state !== 'Veteran Affairs' && state.state !== 'US Military' &&
+                state.state !== 'Grand Princess Ship' && state.state !== 'Diamond Princess Ship' && state.state !== 'Puerto Rico' && 
+                state.state !== 'American Samoa' && state.state !== 'Guam' && state.state !== 'United States Virgin Islands' && 
+                state.state !== 'Federal Prisons' && state.state !== 'Navajo Nation' && state.state !== 'Northern Mariana Islands') {
+                let row = document.createElement('tr');
+                section.append(row);
+                let stateName = document.createElement('td');
+                stateName.innerHTML = `${state.state}`;
+                row.append(stateName);
+                let population = document.createElement('td');
+                population.innerHTML = `${state.population}`;
+                row.append(population);
+                let cases = document.createElement('td');
+                cases.innerHTML = `${state.cases}`;
+                row.append(cases);
+                let deaths = document.createElement('td');
+                deaths.innerHTML = `${state.deaths}`;
+                row.append(deaths);
+                let recovered = document.createElement('td');
+                recovered.innerHTML = `${state.recovered}`;
+                row.append(recovered);
+            }
         });
         console.log('Data', data);
     })
