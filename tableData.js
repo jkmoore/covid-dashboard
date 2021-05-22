@@ -1,6 +1,6 @@
 let url = 'https://api.caw.sh/v3/covid-19/states';
 
-let section = document.getElementById("results");
+let section = document.getElementById("table");
 
 fetch(url)
     .then(response => {

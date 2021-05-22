@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./src/App.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script defer src="mainData.js"></script>
   <script defer src="tableData.js"></script>
 </head>
 <body class="bg">
@@ -21,7 +22,7 @@
   <main>
     <div>
       <h1>COVID-19 Dashboard</h1>
-      <img src="http://placekitten.com/1680/100">
+      <section id="mainDashboard"></section>
     </div>
     <div id="Map">
       <h1>Map</h1>
@@ -29,7 +30,7 @@
     </div>
     <div id="Table">
       <h1>Table</h1>
-      <section id="results"></section>
+      <section id="table"></section>
     </div>
     <div id="Graph">
       <h1>Graph</h1>

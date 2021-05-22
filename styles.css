@@ -29,3 +29,8 @@ h1 {
 td {
     padding: 10px;
 }
+
+h2 {
+    font-weight: normal;
+    color: #4f4c87;
+}
