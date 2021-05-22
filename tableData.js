@@ -22,7 +22,6 @@ fetch(url)
         let deathHeading = document.createElement('td');
         deathHeading.innerHTML = 'Deaths';
         heading.append(deathHeading);
-        let recoveredHeading = document.createElement('td');
         data.forEach(state => {
             if (state.state !== 'Wuhan Repatriated' && state.state !== 'Veteran Affairs' && state.state !== 'US Military' &&
                 state.state !== 'Grand Princess Ship' && state.state !== 'Diamond Princess Ship' && state.state !== 'Puerto Rico' && 
