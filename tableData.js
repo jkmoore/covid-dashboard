@@ -23,8 +23,6 @@ fetch(url)
         deathHeading.innerHTML = 'Deaths';
         heading.append(deathHeading);
         let recoveredHeading = document.createElement('td');
-        recoveredHeading.innerHTML = 'Recovered';
-        heading.append(recoveredHeading);
         data.forEach(state => {
             if (state.state !== 'Wuhan Repatriated' && state.state !== 'Veteran Affairs' && state.state !== 'US Military' &&
                 state.state !== 'Grand Princess Ship' && state.state !== 'Diamond Princess Ship' && state.state !== 'Puerto Rico' && 
@@ -44,9 +42,6 @@ fetch(url)
                 let deaths = document.createElement('td');
                 deaths.innerHTML = `${state.deaths}`;
                 row.append(deaths);
-                let recovered = document.createElement('td');
-                recovered.innerHTML = `${state.recovered}`;
-                row.append(recovered);
             }
         });
         console.log('Data', data);
