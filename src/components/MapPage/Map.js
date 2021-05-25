@@ -64,7 +64,6 @@ export const CovidMap = () => {
             <div className='chart'>
                 <JSCharting options={config}/>
             </div>
-            
         </main>
     );
 }
