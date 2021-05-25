@@ -4,8 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>COVID-19 Dashboard</title>
   <link rel="stylesheet" href="./styles.css">
-  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script type="text/javascript" src="jsc/jscharting.js"></script>
+  <script type="text/javascript" src="jsc/modules/maps.js"></script>
   <script defer src="mainData.js"></script>
+  <script defer src="mapData.js"></script>
   <script defer src="tableData.js"></script>
 </head>
 <body class="bg">
@@ -19,27 +21,27 @@
     </ul>
   </nav>
   <main>
-    <div>
+    <section>
       <h1>COVID-19 Dashboard</h1>
-      <section id="mainDashboard"></section>
-    </div>
-    <div id="Map">
+      <div id="mainDashboard"></div>
+    </section>
+    <section id="Map">
       <h1>Map</h1>
-      <img src="http://placekitten.com/1680/750">
-    </div>
-    <div id="Table">
+      <div id="chartDiv" style="max-width: 740px; height: 480px;"></div>
+    </section>
+    <section id="Table">
       <h1>Table</h1>
-      <section id="table"></section>
-    </div>
-    <div id="Graph">
+      <div id="table"></div>
+    </section>
+    <section id="Graph">
       <h1>Graph</h1>
       <img src="http://placekitten.com/1680/700">
-    </div>
-    <div id="About">
+    </section>
+    <section id="About">
       <h1>About</h1>
       <p>Created by Kai Moore and Johnnie Clark, June 2021.<br><br>
         Data sourced from Worldometers and updated every 10 minutes. Retrieved using disease.sh, the Open Disease Data API.</p>
-    </div>
+    </section>
   </main>
 </body>
 </html>
