@@ -8,7 +8,7 @@ const names = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','
 let states = [];
 
 export const Table = () => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         axios.get(url).then((resp) => {
@@ -24,11 +24,11 @@ export const Table = () => {
 
     const renderStates = (state, index) => {
         return(
-            <tr key={index}>
-                <td>{state.state}</td>
-                <td>{state.population}</td>
-                <td>{state.cases}</td>
-                <td>{state.deaths}</td>
+            <tr className="tableRow" key={index}>
+                <td className="item">{state.state}</td>
+                <td className="item">{state.population}</td>
+                <td className="item">{state.cases}</td>
+                <td className="item">{state.deaths}</td>
             </tr>
         )
     }

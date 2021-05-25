@@ -61,3 +61,11 @@
 .table tr:nth-child(even) {
   background-color: lightgray;
 }
+
+.tableRow{
+  border: 1px solid black;
+}
+
+.tableRow:hover{
+  background-color: darkgrey;
+}
