@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import { Home } from "./components/HomePage/Home";
 import { CovidMap } from "./components/MapPage/Map";
+import { Table } from "./components/TablePage/Table";
 import { Graph } from "./components/GraphPage/Graph";
 import { About } from "./components/AboutPage/About";
 
@@ -18,6 +19,9 @@ export const NavBar = () => {
                         </li>
                         <li className="list-item">
                             <Link className="nav-link" to="/map">Map</Link>
+                        </li>
+                        <li className="list-item">
+                            <Link className="nav-link" to="/table">Table</Link>
                         </li>
                         <li className="list-item">
                             <Link className="nav-link" to="/graph">Graph</Link>
@@ -38,6 +42,9 @@ export const NavBar = () => {
           </Route>
           <Route path="/map">
             <CovidMap />
+          </Route>
+          <Route path="/table">
+            <Table />
           </Route>
           <Route path="/">
             <Home />
