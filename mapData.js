@@ -41,7 +41,7 @@ function getData() {
             var serPoints = mapStates.map((arrItem, index) => {
                 console.log("Index: ", index);
                 console.log("State at Index: ", states[index]);
-                return { map: 'US.' + arrItem, z: states[index].cases, y: states[index].deaths, x: states[index].active, w: states[index].tests, v: states[index].todayCases, u: states[index].todayDeaths };
+                return { map: 'US.' + arrItem, z: states[index].cases, y: states[index].deaths };
             });
             return serPoints;
         }
@@ -52,7 +52,7 @@ function getData() {
         palette: {
             pointValue: '{%zValue}',
             colors: ['#f7fcfd', '#e5f5f9', '#ccece6', '#99d8c9', '#66c2a4', '#41ae76', '#238b45', '#006d2c', '#00441b'],
-            ranges: { min: 0, max: 4000000, interval: 800000 },
+            ranges: [0, 100000, 200000, 400000, 800000, [1200000, 4000000]],
             defaultRange_legendEntry_value: '%min - %max'
         },
         legend: {
@@ -62,7 +62,7 @@ function getData() {
         },
         defaultPoint: {
             label_text: '%stateCode',
-            tooltip: "<b>%name<b/> <br/> Total Cases: {%zValue} <br/>Deaths: {%yValue} <br/>Active Cases: {%xValue} <br/>Tests: {%wValue} <br/>Today's Cases: {%vValue} <br/>Today's Deaths: {%uValue}"
+            tooltip: "<b>%name<b/> <br/> Total Cases: {%zValue}"
         },
         defaultSeries_shape_padding: 0.02,
         series: [{ id: 'usMap', map: 'us' }]
