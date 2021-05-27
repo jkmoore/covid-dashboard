@@ -1,8 +1,8 @@
-let url = 'https://api.caw.sh/v3/covid-19/states';
+let tableURL = 'https://api.caw.sh/v3/covid-19/states';
 
 let section = document.getElementById("table");
 
-fetch(url)
+fetch(tableURL)
     .then(response => {
         console.log('Request successful', response);
         return response.json();
