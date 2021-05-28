@@ -8,18 +8,17 @@ const statesFull = ['Alabama','Alaska','Arizona','Arkansas','California','Colora
 function getData() {
   fetch(mapURL)
     .then((response) => {
-        console.log("MAPDATA 2")
         return response.json();
     })
     .then((data) => {
         let states = [];
-        console.log('Data: ', data);
+        //console.log('Data: ', data);
         data.forEach(element => {
             if(statesFull.includes(element.state)){
               states.push(element);
             }
         });
-        console.log('Final: ', states);
+        //console.log('Final: ', states);
         function compare (a, b){
             const stateA = a.state;
             const stateB = b.state;
@@ -33,14 +32,8 @@ function getData() {
         }
         states.sort(compare);
 
-        console.log("States: ", states)
-        console.log("length: ", states.length)
-
-
         function getRandomPoints() {
             var serPoints = mapStates.map((arrItem, index) => {
-                console.log("Index: ", index);
-                console.log("State at Index: ", states[index]);
                 return { map: 'US.' + arrItem, z: states[index].cases, y: states[index].deaths };
             });
             return serPoints;
