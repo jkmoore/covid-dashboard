@@ -13,6 +13,7 @@ export const Table = () => {
     useEffect(() => {
         axios.get(url).then((resp) => {
             let info = resp.data;
+            console.log(info)
             info.forEach(element => {
                 if(names.includes(element.state)){
                     states.push(element);
@@ -28,7 +29,13 @@ export const Table = () => {
                 <td className="item">{state.state}</td>
                 <td className="item">{state.population}</td>
                 <td className="item">{state.cases}</td>
+                <td className="item">{state.todayCases}</td>
+                <td className="item">{state.casesPerOneMillion}</td>
                 <td className="item">{state.deaths}</td>
+                <td className="item">{state.todayDeaths}</td>
+                <td className="item">{state.deathsPerOneMillion}</td>
+                <td className="item">{state.tests}</td>
+                <td className="item">{state.testsPerOneMillion}</td>
             </tr>
         )
     }
@@ -41,8 +48,14 @@ export const Table = () => {
                     <tr>
                     <th className="colHead">State</th>
                     <th className="colHead">Population</th>
-                    <th className="colHead">Cases</th>
-                    <th className="colHead">Deaths</th>
+                    <th className="colHead">Total Cases</th>
+                    <th className="colHead">Todays Cases</th>
+                    <th className="colHead">Cases Per Million</th>
+                    <th className="colHead">Total Deaths</th>
+                    <th className="colHead">Todays Deaths</th>
+                    <th className="colHead">Deaths Per Million</th>
+                    <th className="colHead">Total Tests</th>
+                    <th className="colHead">Tests Per Million</th>
                     </tr>
                 </thead>
                 <tbody className="tableBody">
